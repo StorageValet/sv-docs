@@ -9,14 +9,16 @@ Clean, current, and contradiction‑free version of the implementation plan read
 > - `FINAL_VALIDATION_CHECKLIST_v3.1_PHASE1.md`
 > - `LINE_IN_THE_SAND_Go-NoGo_v3.1_PHASE1.md`
 
-**Status**  
-- **Authoritative pricing:** **Single tier at $299/month.** Other tiers are deprecated.  
-- **Setup fee:** configurable; **disabled by default** pending confirmation.  
-- **Marketing site:** **Webflow** (public marketing only).  
-- **Portal:** Vite + React + TS (strict 12 files / 6 deps / <500 LOC).  
-- **Backend:** Supabase (Postgres + Auth + Storage + Edge Functions).  
-- **Billing:** Stripe Checkout + Customer Portal; webhooks in Supabase Edge Functions.  
+**Status**
+- **Authoritative pricing:** **Single tier at $299/month.** Other tiers are deprecated.
+- **Setup fee:** configurable; **disabled by default** pending confirmation.
+- **Marketing site:** **Webflow** (public marketing only).
+- **Portal:** Vite + React + TS (clean architecture, disciplined growth).
+- **Backend:** Supabase (Postgres + Auth + Storage + Edge Functions).
+- **Billing:** Stripe Checkout + Customer Portal; webhooks in Supabase Edge Functions.
 - **Admin/Internal:** Retool for QR printing & ops dashboard (fallback staff page in portal only if Retool validation fails).
+
+> **Note on Code Metrics (Phase-1 Update)**: Original v3.1 constraints (≤12 files, ≤6 deps, <500 LOC) were **helpful guardrails during initial development** but proved too restrictive for essential customer features. As of Oct 2025, these are **guidelines for code quality**, not hard limits. Architecture remains disciplined: 4 routes, RLS-first security, Stripe Hosted only, systematic organization. See `PHASE_1_STRATEGIC_SHIFT.md` for full context.
 
 ---
 
@@ -30,10 +32,12 @@ These edits harmonize with your most recent architecture summaries and checklist
 
 ---
 
-## 1) Executive summary (unchanged in spirit, corrected for pricing/site)
-Across previous attempts, we standardized on a **lean, secure** architecture: Webflow (marketing) → Stripe Checkout → Supabase (Auth/DB/Storage) → React Portal (4 routes) with strict limits: **12 files, 6 deps, <500 LOC**. Use **Retool** for internal tooling (QR printing, ops), not a custom admin. RLS is the security linchpin.  
+## 1) Executive summary
+Across previous attempts, we standardized on a **lean, secure** architecture: Webflow (marketing) → Stripe Checkout → Supabase (Auth/DB/Storage) → React Portal (4 routes) with disciplined code organization. Use **Retool** for internal tooling (QR printing, ops), not a custom admin. RLS is the security linchpin.
 
-**Definition of Done (MVP):** A new customer can (a) pay via Stripe Checkout, (b) receive a magic link, (c) log in to `/dashboard`, (d) add items (photos via **signed URLs**), (e) schedule pickup/delivery, and (f) manage billing via Stripe Customer Portal—**with RLS verified for zero cross‑tenant access**.
+**Definition of Done (MVP):** A new customer can (a) pay via Stripe Checkout, (b) receive a magic link, (c) log in to `/dashboard`, (d) add/edit/delete items (photos via **signed URLs**), (e) schedule pickup/delivery (including batch operations), (f) search and filter inventory, (g) update their profile, and (h) manage billing via Stripe Customer Portal—**with RLS verified for zero cross‑tenant access**.
+
+**Phase-1 Expansion (Oct 2025):** Added essential customer workflows: full CRUD operations, multi-photo support (1-5 per item), batch scheduling, search/filters, profile editing, movement history, and QR code printing.
 
 ---
 
@@ -86,12 +90,22 @@ Across previous attempts, we standardized on a **lean, secure** architecture: We
 
 ---
 
-## 6) Portal build constraints (non‑negotiable)
-- **Files:** ≤12 in `src/` (or 11 if Retool QR printing passes and staff page omitted).  
-- **Dependencies:** exactly 6 prod deps (`@supabase/supabase-js`, `@supabase/auth-ui-react`, `react-router-dom`, `@tanstack/react-query`, `react`, `tailwindcss`).  
-- **Routes:** only `/login`, `/dashboard`, `/schedule`, `/account`.  
-- **LOC:** <500 total (excluding configs).  
-- **No** custom auth, no extra libs, no admin panel (Retool), no mock data.
+## 6) Portal architecture constraints
+
+### Non-Negotiable (Preserved from v3.1):
+- **Routes:** Only `/login`, `/dashboard`, `/schedule`, `/account` (no sprawl).
+- **Backend:** Supabase only (no custom Node/Express).
+- **Billing:** Stripe Hosted Checkout + Customer Portal only (no custom card UI).
+- **Auth:** Magic links only (no password complexity).
+- **Security:** RLS on all customer-facing tables (zero cross-tenant access).
+- **Photos:** Private bucket with signed URLs only (no public access).
+- **Admin:** Retool for internal ops (no custom admin panel in portal).
+
+### Code Quality Guidelines (Relaxed Oct 2025):
+- **Files:** Keep organized and modular; original ~12 file target now ~22 for Phase-1 features.
+- **Dependencies:** Justify each addition; minimize bundle size and security surface. Current: 6 core deps + qrcode.react + date-fns for Phase-1.
+- **LOC:** Favor clarity over brevity; clean code trumps artificial limits. Current: ~913 LOC in Phase 0.6.1, projected ~1,800+ for Phase-1.
+- **No** custom auth, no mock data layers, no unnecessary abstractions.
 
 ---
 
@@ -153,18 +167,22 @@ src/
 ---
 
 ## 12) Risks & mitigations (focused)
-- **Email deliverability** → keep built‑in first; have SendGrid config ready post‑launch.  
-- **Webhook reliability** → log‑first idempotency; Stripe retry‑safe design.  
-- **Photo privacy/perf** → private bucket + signed URLs + size guardrails.  
-- **Scope creep** → hard caps (files/deps/routes/LOC) + config tables for agility.  
+- **Email deliverability** → keep built‑in first; have SendGrid config ready post‑launch.
+- **Webhook reliability** → log‑first idempotency; Stripe retry‑safe design.
+- **Photo privacy/perf** → private bucket + signed URLs + size guardrails.
+- **Scope creep** → disciplined architecture (4 routes, RLS, Stripe Hosted) + config tables for business agility.
+- **Code quality drift** → systematic code reviews, clear component boundaries, documentation.  
 
 ---
 
-## 13) What to exclude (holds from earlier doc)
-- No multi‑tier pricing in code or env for production.  
-- No customer‑facing cubic‑foot promises; gauges remain **UX**, not contractual.  
-- No fifth route, seventh dependency, or new component libs.  
+## 13) What to exclude (architectural boundaries)
+- No multi‑tier pricing in code or env for production.
+- No customer‑facing cubic‑foot promises; gauges remain **UX**, not contractual.
+- No fifth route beyond `/login`, `/dashboard`, `/schedule`, `/account`.
 - No custom Node/Express backend; Supabase Edge only.
+- No custom Stripe card UI; Hosted Checkout/Portal only.
+- No password authentication; magic links only.
+- No custom admin panel in portal; use Retool.
 
 ---
 

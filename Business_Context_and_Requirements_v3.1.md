@@ -26,6 +26,21 @@ Title: Storage Valet — Context & Requirements (Short)
 - No custom admin unless explicitly added later.
 
 ## Engineering Constraints
-- ≤ **12 files**, **6 dependencies**, **<500 LOC** core.  
-- No custom payment forms; no extra routes; no mock layers.  
-- Any contradiction defers to `SV_Implementation_Plan_FINAL_v3.1_2025-10-10.md`.
+
+### Architectural (Non-Negotiable):
+- **4 routes only**: `/login`, `/dashboard`, `/schedule`, `/account`
+- **Supabase backend**: Auth + Postgres + Storage + Edge Functions
+- **Stripe Hosted flows**: Checkout + Customer Portal (no custom card UI)
+- **RLS security**: All customer data owner-only
+- **Magic links only**: No password authentication
+- **Signed URLs**: All photos via time-limited URLs (private bucket)
+
+### Code Quality (Guidelines, Oct 2025):
+- Keep code clean, modular, and well-documented
+- Justify each dependency addition
+- Favor clarity over artificial size limits
+- Current state: ~22 files, 8 deps, ~1,800 LOC for Phase-1 features
+
+**Note**: Original v3.1 constraints (≤12 files, ≤6 deps, <500 LOC) relaxed Oct 2025 to enable essential customer features. See `PHASE_1_STRATEGIC_SHIFT.md` for rationale.
+
+Any contradiction defers to `SV_Implementation_Plan_FINAL_v3.1_2025-10-10.md`.

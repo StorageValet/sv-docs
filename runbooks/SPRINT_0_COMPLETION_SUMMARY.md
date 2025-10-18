@@ -273,22 +273,42 @@ db(phase-1): Add Migration 0004 - inventory enhancements
 
 ## Next Steps (Sprint 1)
 
-### Immediate (Before Frontend Work):
+### ✅ VALIDATION COMPLETE (Oct 18, 2025)
 
-1. **Deploy Migration 0004 to Staging** (use provided script)
-   - Apply migration via `supabase db push`
-   - Verify all new columns exist
-   - Verify RLS policies intact
-   - Test physical lock trigger
-   - Validate data backfill (photo_path → photo_paths)
+**Migration 0004 successfully applied and validated:**
 
-2. **Commit Enhanced Supabase Helpers**
-   ```bash
-   cd ~/code/sv-portal
-   git add src/lib/supabase.ts
-   git commit -m "feat(phase-1): Add multi-photo and event logging helpers"
-   git push
-   ```
+1. **Schema Changes Verified**:
+   - ✅ Items table: `photo_paths`, `status`, `category`, `physical_locked_at`
+   - ✅ Actions table: `item_ids[]`, `service_type` (renamed from `kind`)
+   - ✅ Customer profile: `full_name`, `phone`, `delivery_address`, `delivery_instructions`
+   - ✅ Inventory events table created with RLS
+
+2. **Security & RLS Verified**:
+   - ✅ RLS enabled on: items, customer_profile, actions, inventory_events
+   - ✅ All owner-only policies present (SELECT, INSERT, UPDATE, DELETE)
+
+3. **Triggers & Functions Tested**:
+   - ✅ Physical lock trigger blocks dimension edits when locked
+   - ✅ QR code auto-generation still working
+
+4. **Performance Indexes Created** (8 total):
+   - ✅ idx_actions_item_ids_gin
+   - ✅ idx_customer_profile_phone
+   - ✅ idx_inventory_events_item_id_created
+   - ✅ idx_inventory_events_user_id_created
+   - ✅ idx_items_category
+   - ✅ idx_items_photo_paths_gin
+   - ✅ idx_items_status
+   - ✅ idx_items_user_status_created
+
+5. **Data Integrity**:
+   - ✅ Photo backfill completed (existing `photo_path` → `photo_paths[1]`)
+   - ✅ Zero data loss
+   - ✅ Backward compatible
+
+6. **Enhanced Supabase Helpers Committed**:
+   - ✅ Committed to sv-portal (Oct 18)
+   - ✅ Pushed to GitHub
 
 ### Sprint 1 Frontend Work (6-10 hours):
 

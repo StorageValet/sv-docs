@@ -36,18 +36,26 @@
 
 ## Phase 1.0 Tasks (IN PROGRESS 🚧)
 
-### A. Database & Schema
+### A. Database & Schema (✅ ALL COMPLETE Oct 18, 2025)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
-| Weight+Dimensions required + `cubic_feet` computed | Dev | Oct 18 | YES | ✅ DONE | Already in Migration 0003 |
-| Multi-photo schema: `photo_paths text[]` with backfill | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Item status enum: home / in_transit / stored | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Physical lock: `physical_locked_at` + trigger | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Batch operations: `actions.item_ids[]` + GIN index | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Service type: rename `kind` → `service_type` with extended CHECK | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Movement history: `inventory_events` table with RLS | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
-| Profile expansion: name, phone, address, instructions | Dev | Oct 18 | YES | 🚧 TODO | Migration 0004 |
+| Weight+Dimensions required + `cubic_feet` computed | Dev | Oct 18 | YES | ✅ DONE | Migration 0003 (Oct 17) |
+| Multi-photo schema: `photo_paths text[]` with backfill | Dev | Oct 18 | YES | ✅ DONE | Migration 0004 validated Oct 18 |
+| Item status enum: home / in_transit / stored | Dev | Oct 18 | YES | ✅ DONE | Migration 0004 validated Oct 18 |
+| Physical lock: `physical_locked_at` + trigger | Dev | Oct 18 | YES | ✅ DONE | Trigger tested & working Oct 18 |
+| Batch operations: `actions.item_ids[]` + GIN index | Dev | Oct 18 | YES | ✅ DONE | GIN index verified Oct 18 |
+| Service type: rename `kind` → `service_type` with extended CHECK | Dev | Oct 18 | YES | ✅ DONE | CHECK constraint verified Oct 18 |
+| Movement history: `inventory_events` table with RLS | Dev | Oct 18 | YES | ✅ DONE | RLS policies verified Oct 18 |
+| Profile expansion: name, phone, address, instructions | Dev | Oct 18 | YES | ✅ DONE | All 4 columns verified Oct 18 |
+
+**Validation Results** (Oct 18, 2025):
+- ✅ All schema changes applied successfully
+- ✅ All 8 performance indexes created
+- ✅ RLS enabled on all tables (items, customer_profile, actions, inventory_events)
+- ✅ Physical lock trigger blocks dimension edits when `physical_locked_at IS NOT NULL`
+- ✅ Photo backfill completed (existing `photo_path` → `photo_paths[1]`)
+- ✅ Zero data loss, backward compatible
 
 ### B. Inventory CRUD
 
@@ -122,16 +130,19 @@
 ## Blocking Issues (Current)
 
 ### 🔴 CRITICAL
-1. **Vercel deployment showing old code** (Phase 0.6.1)
-   - Fix: Manual redeploy with cache clear
-   - Owner: DevOps
-   - ETA: 2-5 minutes
+None
 
 ### 🟡 HIGH PRIORITY
-None currently
+None
 
 ### 🟢 MEDIUM PRIORITY
-None currently
+None
+
+**Previous Issues (RESOLVED)**:
+- ✅ Vercel deployment showing old code (Phase 0.6.1) — **RESOLVED Oct 18**
+  - Fixed via manual redeploy with cache clear
+- ✅ Migration 0004 not applied (Sprint 0) — **RESOLVED Oct 18**
+  - Applied to staging and validated successfully
 
 ---
 

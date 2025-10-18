@@ -21,20 +21,35 @@
 
 ---
 
-## Phase 0.6.1 — Item Creation Feature (Code Complete Oct 17, 2025)
+## Phase 0.6.1 — Item Creation Feature (✅ COMPLETE & DEPLOYED Oct 18, 2025)
 
 | Item | PASS ☑ / FAIL ☐ | Notes |
 |------|------------------|-------|
 | 1) **Migration 0003** applied: required fields (value, weight, dims) + insurance tracking | ☑ | Applied 2025-10-17 |
 | 2) **QR code auto-generation**: format SV-YYYY-XXXXXX, unique, sequential | ☑ | Tested: SV-2025-000001, SV-2025-000002 |
 | 3) **AddItemModal component**: photo upload + all required field validation | ☑ | Built, TypeScript compiles |
-| 4) **Dashboard integration**: insurance bar + FAB button + modal | ☑ | Code complete, deployed Oct 18 |
-| 5) **ItemCard metadata display**: QR, cubic feet, weight, value | ☑ | Code complete, deployed Oct 18 |
+| 4) **Dashboard integration**: insurance bar + FAB button + modal | ☑ | Deployed Oct 18 |
+| 5) **ItemCard metadata display**: QR, cubic feet, weight, value | ☑ | Deployed Oct 18 |
 | 6) **Performance indexes**: user_created_at, tags_gin, details_gin | ☑ | Applied to database |
 | 7) **Brand colors applied**: Velvet Night, Deep Harbor, Chalk Linen, etc. | ☑ | Tailwind config updated |
 | 8) **Insurance tracking**: $3,000 cap, progress bar, no dollar amounts shown | ☑ | View + function created, tested |
-| 9) **Vercel deployment**: latest code served in production | ☐ | **Pending manual redeploy** |
-| 10) **E2E testing**: smoke test checklist (12 sections) executed | ☐ | Pending deployment fix |
+| 9) **Vercel deployment**: latest code served in production | ☑ | Deployed Oct 18 |
+| 10) **E2E testing**: smoke test checklist (12 sections) executed | ☑ | Verified Oct 18 |
+
+---
+
+## Sprint 0 — Foundation for Phase 1.0 (✅ COMPLETE Oct 18, 2025)
+
+| Item | PASS ☑ / FAIL ☐ | Notes |
+|------|------------------|-------|
+| **Migration 0004** created: multi-photo, status, batch ops, events | ☑ | 408 lines, committed to git |
+| **Migration 0004** applied to staging: all schema changes | ☑ | Validated Oct 18, all checks passed |
+| **Supabase helpers** enhanced: multi-photo + event logging | ☑ | 173 lines, committed to git |
+| **Documentation** complete: addenda, checklists, Go/No-Go | ☑ | 4 new docs + updates |
+| **Validation script** created and executed | ☑ | All 8 performance indexes verified |
+| **RLS policies** extended for UPDATE/DELETE operations | ☑ | Verified on items, customer_profile, actions |
+| **Physical lock trigger** tested and working | ☑ | Blocks dimension edits when locked |
+| **Photo backfill** verified (existing data migrated) | ☑ | No data loss, backward compatible |
 
 ---
 
