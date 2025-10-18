@@ -1,7 +1,13 @@
 # Storage Valet — Implementation Plan (FINAL v3.1 • 2025‑10‑10)
 
-**Purpose**  
+**Purpose**
 Clean, current, and contradiction‑free version of the implementation plan ready for: (1) Claude Code kickoff, (2) ChatGPT project libraries, and (3) the pre‑repo package.
+
+> **Phase-1 Addenda Active** (2025-10-18): This v3.1 plan remains the architectural foundation. For Phase-1 feature enhancements (multi-photo, CRUD, batch operations, search, profile editing, movement history), see:
+> - `addenda/PHASE_1_PHYSICAL_DATA_REQUIREMENTS.md`
+> - `addenda/PHASE_1_COMPONENT_IMPLEMENTATION_CHECKLIST.md`
+> - `FINAL_VALIDATION_CHECKLIST_v3.1_PHASE1.md`
+> - `LINE_IN_THE_SAND_Go-NoGo_v3.1_PHASE1.md`
 
 **Status**  
 - **Authoritative pricing:** **Single tier at $299/month.** Other tiers are deprecated.  
