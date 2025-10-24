@@ -1,8 +1,9 @@
 # LINE IN THE SAND — Go/No-Go Task List (Phase 1.0 Extension)
 
 **STATUS**: ACTIVE — Phase-1 Go/No-Go extension
-**Version**: 1.0
-**Date**: 2025-10-18
+**Version**: 1.1 (Updated Oct 24)
+**Date**: 2025-10-18 (Last major revision)
+**Last Updated**: 2025-10-24 (Status verification)
 **Supersedes**: LINE_IN_THE_SAND_Go-NoGo_v3.1.md (extends for Phase-1)
 
 ---
@@ -22,19 +23,19 @@
 
 ---
 
-## Phase 0.6.1 Tasks (MOSTLY COMPLETE ⚠️)
+## Phase 0.6.1 Tasks (COMPLETE ✅)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
 | Apply Migration 0003 (physical data + QR + insurance) | Dev | Oct 17 | YES | ✅ DONE | Applied successfully |
 | Build AddItemModal with multi-field validation | Dev | Oct 17 | YES | ✅ DONE | Code complete |
 | Integrate insurance tracking dashboard | Dev | Oct 17 | YES | ✅ DONE | Progress bar working |
-| Deploy to Vercel with cache clear | DevOps | Oct 17 | YES | ⚠️ BLOCKED | Serving old code |
-| Run E2E smoke tests (12 sections) | QA | Oct 18 | YES | ⏳ PENDING | Awaiting deployment |
+| Deploy to Vercel with cache clear | DevOps | Oct 17 | YES | ✅ DONE | Fixed Oct 18, cache cleared |
+| Run E2E smoke tests (12 sections) | QA | Oct 18 | YES | ✅ DONE | Verified Oct 24 |
 
 ---
 
-## Phase 1.0 Tasks (IN PROGRESS 🚧)
+## Phase 1.0 Tasks (CODE COMPLETE ✅, TESTING PENDING ⏳)
 
 ### A. Database & Schema (✅ ALL COMPLETE Oct 18, 2025)
 
@@ -57,73 +58,73 @@
 - ✅ Photo backfill completed (existing `photo_path` → `photo_paths[1]`)
 - ✅ Zero data loss, backward compatible
 
-### B. Inventory CRUD
+### B. Inventory CRUD (✅ ALL COMPLETE Oct 24, 2025)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
-| Multi-photo upload (1–5) with add/remove | Dev | Oct 19 | YES | 🚧 TODO | Update AddItemModal |
-| Item edit modal with physical lock enforcement | Dev | Oct 19 | YES | 🚧 TODO | EditItemModal component |
-| Item delete with confirmation | Dev | Oct 19 | YES | 🚧 TODO | DeleteConfirmModal component |
-| Update Dashboard with edit/delete buttons | Dev | Oct 19 | YES | 🚧 TODO | Wire up modals |
+| Multi-photo upload (1–5) with add/remove | Dev | Oct 19 | YES | ✅ DONE | Implemented in AddItemModal |
+| Item edit modal with physical lock enforcement | Dev | Oct 19 | YES | ✅ DONE | EditItemModal component complete |
+| Item delete with confirmation | Dev | Oct 19 | YES | ✅ DONE | DeleteConfirmModal component complete |
+| Update Dashboard with edit/delete buttons | Dev | Oct 19 | YES | ✅ DONE | All modals wired and deployed |
 
-### C. Batch Operations & Service Flows
-
-| Task | Owner | Due | Blocking? | Status | Notes |
-|------|-------|-----|-----------|--------|-------|
-| Multi-select checkboxes on Dashboard | Dev | Oct 20 | YES | 🚧 TODO | Batch selection UI |
-| Batch pickup flow (Home items only) | Dev | Oct 20 | YES | 🚧 TODO | Filter by status |
-| Batch redelivery flow (Stored items only) | Dev | Oct 20 | YES | 🚧 TODO | Filter by status |
-| Empty-container request flow | Dev | Oct 20 | YES | 🚧 TODO | Container types + quantities |
-| Refactor Schedule page with tabs | Dev | Oct 20 | YES | 🚧 TODO | Pickup / Redelivery / Containers |
-
-### D. Search & Filters
+### C. Batch Operations & Service Flows (✅ ALL COMPLETE Oct 24, 2025)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
-| Debounced search bar (keyword search) | Dev | Oct 21 | YES | 🚧 TODO | SearchBar component |
-| Status filter chips (All / Home / In-Transit / Stored) | Dev | Oct 21 | YES | 🚧 TODO | FilterChips component |
-| Category filter chips | Dev | Oct 21 | YES | 🚧 TODO | Category support |
-| Grid/list view toggle with persistence | Dev | Oct 21 | YES | 🚧 TODO | localStorage |
+| Multi-select checkboxes on Dashboard | Dev | Oct 20 | YES | ✅ DONE | Batch selection UI implemented |
+| Batch pickup flow (Home items only) | Dev | Oct 20 | YES | ✅ DONE | Filters by Home status |
+| Batch redelivery flow (Stored items only) | Dev | Oct 20 | YES | ✅ DONE | Filters by Stored status |
+| Empty-container request flow | Dev | Oct 20 | YES | ✅ DONE | Container types + quantities working |
+| Refactor Schedule page with tabs | Dev | Oct 20 | YES | ✅ DONE | Pickup / Redelivery / Containers tabs complete |
 
-### E. Account & Profile
-
-| Task | Owner | Due | Blocking? | Status | Notes |
-|------|-------|-----|-----------|--------|-------|
-| Profile edit form (name, phone, address, instructions) | Dev | Oct 21 | YES | 🚧 TODO | ProfileEditForm component |
-| Update Account page with editable profile | Dev | Oct 21 | YES | 🚧 TODO | Replace read-only card |
-| Validation (phone format, required fields) | Dev | Oct 21 | YES | 🚧 TODO | Client-side validation |
-
-### F. Movement History & QR
+### D. Search & Filters (✅ ALL COMPLETE Oct 24, 2025)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
-| Event logging helpers (create, update, delete, schedule) | Dev | Oct 22 | YES | 🚧 TODO | lib/supabase.ts |
-| ItemTimeline component (chronological event display) | Dev | Oct 22 | YES | 🚧 TODO | Timeline UI |
-| QR code display with print/download | Dev | Oct 22 | YES | 🚧 TODO | QRCodeDisplay component |
-| Add `qrcode.react` dependency | Dev | Oct 22 | YES | 🚧 TODO | package.json |
+| Debounced search bar (keyword search) | Dev | Oct 21 | YES | ✅ DONE | SearchBar component implemented |
+| Status filter chips (All / Home / In-Transit / Stored) | Dev | Oct 21 | YES | ✅ DONE | FilterChips component complete |
+| Category filter chips | Dev | Oct 21 | YES | ✅ DONE | Category-based filtering working |
+| Grid/list view toggle with persistence | Dev | Oct 21 | YES | ✅ DONE | localStorage persistence working |
 
-### G. Testing & Validation
-
-| Task | Owner | Due | Blocking? | Status | Notes |
-|------|-------|-----|-----------|--------|-------|
-| RLS verification (cross-user isolation) | QA | Oct 23 | YES | 🚧 TODO | Security audit |
-| Performance test (50 items <5s) | QA | Oct 23 | YES | 🚧 TODO | Benchmark |
-| Cross-browser test (Chrome, Safari, Firefox) | QA | Oct 23 | YES | 🚧 TODO | Compatibility |
-| Mobile responsive check | QA | Oct 23 | YES | 🚧 TODO | iOS + Android |
-| Physical lock enforcement test | QA | Oct 23 | YES | 🚧 TODO | Try editing locked item |
-| Batch operations data integrity | QA | Oct 23 | YES | 🚧 TODO | Verify item_ids[] persistence |
-
-### H. Deployment
+### E. Account & Profile (✅ ALL COMPLETE Oct 24, 2025)
 
 | Task | Owner | Due | Blocking? | Status | Notes |
 |------|-------|-----|-----------|--------|-------|
-| Apply Migration 0004 to Supabase (staging) | DevOps | Oct 24 | YES | 🚧 TODO | Test before production |
-| Deploy Portal to Vercel (staging) | DevOps | Oct 24 | YES | 🚧 TODO | Clear cache |
-| Smoke test Phase-1 features (staging) | QA | Oct 24 | YES | 🚧 TODO | Full feature set |
-| Apply Migration 0004 to Supabase (production) | DevOps | Oct 25 | YES | 🚧 TODO | Final deployment |
-| Deploy Portal to Vercel (production) | DevOps | Oct 25 | YES | 🚧 TODO | Clear cache |
-| Smoke test Phase-1 features (production) | QA | Oct 25 | YES | 🚧 TODO | Final verification |
-| Tag repos `phase-1.0-complete` | DevOps | Oct 25 | YES | 🚧 TODO | Git tags |
+| Profile edit form (name, phone, address, instructions) | Dev | Oct 21 | YES | ✅ DONE | ProfileEditForm component complete |
+| Update Account page with editable profile | Dev | Oct 21 | YES | ✅ DONE | Read-only card replaced with editable form |
+| Validation (phone format, required fields) | Dev | Oct 21 | YES | ✅ DONE | Client-side validation working |
+
+### F. Movement History & QR (✅ ALL COMPLETE Oct 24, 2025)
+
+| Task | Owner | Due | Blocking? | Status | Notes |
+|------|-------|-----|-----------|--------|-------|
+| Event logging helpers (create, update, delete, schedule) | Dev | Oct 22 | YES | ✅ DONE | lib/supabase.ts helpers complete |
+| ItemTimeline component (chronological event display) | Dev | Oct 22 | YES | ✅ DONE | Timeline UI component complete |
+| QR code display with print/download | Dev | Oct 22 | YES | ✅ DONE | QRCodeDisplay component with print/download |
+| Add `qrcode.react` dependency | Dev | Oct 22 | YES | ✅ DONE | Dependency added to package.json |
+
+### G. Testing & Validation (⏳ PENDING — PRIMARY FOCUS FOR NEXT SESSION)
+
+| Task | Owner | Due | Blocking? | Status | Notes |
+|------|-------|-----|-----------|--------|-------|
+| RLS verification (cross-user isolation) | QA | Oct 23 | YES | ⏳ READY | Part of manual test script |
+| Performance test (50 items <5s) | QA | Oct 23 | YES | ⏳ READY | Benchmark in test script |
+| Cross-browser test (Chrome, Safari, Firefox) | QA | Oct 23 | YES | ⏳ READY | Compatibility test ready |
+| Mobile responsive check | QA | Oct 23 | YES | ⏳ READY | iOS + Android testing |
+| Physical lock enforcement test | QA | Oct 23 | YES | ⏳ READY | Test case prepared |
+| Batch operations data integrity | QA | Oct 23 | YES | ⏳ READY | Verify item_ids[] persistence |
+
+### H. Deployment (⏳ BLOCKED ON TESTING)
+
+| Task | Owner | Due | Blocking? | Status | Notes |
+|------|-------|-----|-----------|--------|-------|
+| Apply Migration 0004 to Supabase (staging) | DevOps | Oct 24 | YES | ✅ DONE | Applied and validated Oct 18 |
+| Deploy Portal to Vercel (staging) | DevOps | Oct 24 | YES | ✅ DONE | Deployed Oct 24, all env vars set |
+| Smoke test Phase-1 features (staging) | QA | Oct 24 | YES | ⏳ READY | Manual test script available |
+| Apply Migration 0004 to Supabase (production) | DevOps | Oct 25 | YES | ⏳ BLOCKED | Blocked on testing completion |
+| Deploy Portal to Vercel (production) | DevOps | Oct 25 | YES | ⏳ BLOCKED | Blocked on testing completion |
+| Smoke test Phase-1 features (production) | QA | Oct 25 | YES | ⏳ BLOCKED | Blocked on testing completion |
+| Tag repos `phase-1.0-complete` | DevOps | Oct 25 | YES | ⏳ BLOCKED | After go-live decision |
 
 ---
 
