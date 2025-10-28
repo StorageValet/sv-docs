@@ -1,6 +1,6 @@
 # Platform Documentation Repository
 
-This directory contains organized, automatically-updated official documentation for all platforms used in Storage Valet development and deployment.
+This directory contains organized official documentation for all platforms used in Storage Valet development and deployment. Most docs are fetched real-time via MCP servers.
 
 ## Structure
 
@@ -20,8 +20,8 @@ Each platform has its own subdirectory:
 - **Vercel**: Configured as MCP server - always fetches latest docs on-demand
 - **Tahoe**: MCP server configured when needed - fetches latest Apple docs
 
-### Manual Sync Platforms (Periodic Updates)
-- **React**: Updated via GitHub Actions workflow (weekly)
+### Always-Available Platforms (Direct Access)
+- **React**: Access directly at https://react.dev (no sync needed)
 
 ## Using These Docs with Claude Code
 
@@ -56,13 +56,13 @@ Current MCP servers active:
 - ✅ Supabase (mcp.supabase.com) - Real-time docs
 - ⚠️ Stripe (via @stripe/mcp) - Configured, minor CLI compatibility issue
 - ✅ Vercel (mcp.vercel.com) - OAuth on first use
-- ✅ React - Weekly GitHub Actions sync
+- 📋 React - Direct access at https://react.dev (no automation needed)
 - 📋 Tahoe (on-demand, apple-docs-mcp) - Available when needed
 
 ## Maintenance
 
-- **Weekly**: GitHub Actions syncs React docs
-- **On-demand**: MCP servers always provide latest info
-- **Monthly**: Manual review of all platform docs for major changes
+- **Real-time**: MCP servers fetch latest docs on every query
+- **No automated syncing**: No GitHub Actions or cron jobs - zero risk to production
+- **Manual updates**: Review platform docs for major version changes as needed
 
 Last updated: 2025-10-28

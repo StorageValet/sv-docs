@@ -38,11 +38,11 @@ Storage Valet now has a comprehensive documentation system powered by **Model Co
 - **What You'll Get**: Real-time Vercel deployment and Edge Function docs
 - **Example Once Active**: "How do I set environment variables in Vercel?"
 
-### ⚙️ **React** - Manual Sync (Weekly GitHub Actions)
-- **Status**: Community support, automatic weekly sync
-- **How to Use**: Ask any React question; Claude uses latest synced docs
+### ⚙️ **React** - Direct Access (No Sync Needed)
+- **Status**: Always current at https://react.dev
+- **How to Use**: Ask any React question; Claude accesses latest docs
 - **Example**: "Show me an example of using useReducer with localStorage"
-- **Update Frequency**: Automated weekly via GitHub Actions
+- **Update Frequency**: No automation - always fetch directly from official source
 
 ### 📋 **macOS Tahoe** - On-Demand
 - **Status**: MCP available when needed
@@ -120,7 +120,7 @@ Both files contain an `mcpServers` object with server definitions.
 - **Useful Queries**: "How do I deploy to Vercel?", "Can I run Python in Edge Functions?"
 
 ### React ✅ Always Available
-- **Activation**: No MCP needed, sync happens automatically
+- **Activation**: No setup needed - access directly at https://react.dev
 - **What It Provides**: Latest React documentation, API references, patterns
 - **Useful Queries**: "Show me how to use useContext", "What's the difference between useMemo and useCallback?"
 
@@ -135,7 +135,7 @@ Both files contain an `mcpServers` object with server definitions.
 │   ├── supabase/README.md           # Supabase docs index (MCP active)
 │   ├── stripe/README.md             # Stripe docs index (MCP pending)
 │   ├── vercel/README.md             # Vercel docs index (MCP pending)
-│   ├── react/README.md              # React docs index (synced weekly)
+│   ├── react/README.md              # React docs index (direct access)
 │   └── tahoe/README.md              # macOS Tahoe docs index (on-demand)
 ├── runbooks/                         # Existing: Operational guides
 ├── scripts/                          # Existing: Utility scripts
@@ -209,7 +209,7 @@ If MCPs are unavailable (rare), read from local copies in `platform-docs/`.
 **A**: Yes, local copies in `platform-docs/` are always available. They're less current but sufficient for most questions.
 
 ### Q: How often are React docs updated?
-**A**: Weekly via GitHub Actions workflow. Check the last sync date in `platform-docs/react/README.md`.
+**A**: React docs are always current at https://react.dev - no sync needed. Access directly for latest information.
 
 ### Q: How do I request documentation for a new platform?
 **A**: Create an issue in sv-docs repo describing:
@@ -361,7 +361,7 @@ If anything is unclear:
   - Supabase MCP: ✅ Active
   - Stripe MCP: ⏳ Awaiting API key
   - Vercel MCP: ⏳ Awaiting OAuth
-  - React: ✅ Weekly sync
+  - React: ✅ Direct access (no sync needed)
   - Tahoe: 📋 On-demand
 
 ---

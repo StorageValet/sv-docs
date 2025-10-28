@@ -43,7 +43,7 @@ Storage Valet Documentation System
 | **Supabase** | ✅ Active | Real-time via MCP | Ask questions directly |
 | **Vercel** | ✅ Ready | OAuth on first use | Ask Vercel question to authenticate |
 | **Stripe** | ⚠️ Configured | Questions + CLI | Use `vercel projects list` approach |
-| **React** | ✅ Syncing | Weekly GitHub Actions | Already working |
+| **React** | ✅ Direct Access | https://react.dev (no sync needed) | Access directly or ask Claude |
 | **Tahoe** | 📋 Optional | On-demand MCP | Deploy when building native Mac features |
 
 ---
@@ -146,12 +146,12 @@ Claude: [Searches Stripe docs and provides answer]
 
 ---
 
-## 🔄 What Gets Updated Automatically
+## 🔄 Documentation Access Methods
 
 - **Supabase**: ✅ Real-time (via MCP)
 - **Vercel**: ✅ Real-time (via MCP)
-- **React**: ✅ Weekly (GitHub Actions)
-- **Stripe**: ⚠️ Manual (docs available via questions)
+- **React**: ✅ Direct (https://react.dev - no automation needed)
+- **Stripe**: ⚠️ Direct (official docs + MCP configured with CLI quirk)
 - **Tahoe**: 📋 On-demand (via MCP when queried)
 
 ---

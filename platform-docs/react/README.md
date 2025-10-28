@@ -1,6 +1,6 @@
 # React Documentation
 
-**Status**: ✅ Community MCP Available - Manual Sync Set Up
+**Status**: ✅ Always Accessible - No Sync Needed
 
 ## Quick Access
 
@@ -36,8 +36,8 @@ Claude: [Fetches latest React docs and provides example]
 - Official React docs are always available at https://react.dev
 - High-quality, actively maintained by React team
 
-### Option 3: Local Docs (Offline Reference)
-Copies of key React documentation are synced weekly via GitHub Actions.
+### Option 3: Offline Reference
+If you don't have internet access, React docs are available at https://react.dev/offline or via your local installation.
 
 ## Storage Valet Integration Points
 
@@ -93,17 +93,17 @@ Copies of key React documentation are synced weekly via GitHub Actions.
 
 ## Maintenance
 
-- **Weekly Sync**: GitHub Actions pulls latest React docs
-- **Manual Updates**: As needed for major React versions
-- **Last Sync**: 2025-10-28
+- **No automated sync needed** - React docs always current at https://react.dev
+- **Manual reference**: Check platform-docs/react/ for integration patterns specific to Storage Valet
+- **Updates**: As needed for major React version upgrades
 
 ## Community Resources
 
 - React Discord: https://discord.gg/react
 - React GitHub Discussions: https://github.com/facebook/react/discussions
-- Awesome React: https://github.com/enaqx/awesome-react
+- Awesome React: https://github.com/enaxux/awesome-react
 
 ---
 
 Last updated: 2025-10-28
-Sync Status: ✅ Active (Weekly)
+Status: No automated sync - Access docs directly or ask Claude
