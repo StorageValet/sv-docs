@@ -10,7 +10,6 @@ Each platform has its own subdirectory:
 - **stripe/** - Stripe payments, billing, and API docs (MCP enabled)
 - **vercel/** - Vercel deployment, Edge Functions, and infrastructure docs (MCP enabled)
 - **react/** - React library, hooks, and best practices docs
-- **tahoe/** - macOS Tahoe system documentation and API references (MCP enabled)
 
 ## How These Docs Are Kept Current
 
@@ -18,7 +17,6 @@ Each platform has its own subdirectory:
 - **Supabase**: Configured as MCP server - always fetches latest docs on-demand
 - **Stripe**: Configured as MCP server - always fetches latest docs on-demand
 - **Vercel**: Configured as MCP server - always fetches latest docs on-demand
-- **Tahoe**: MCP server configured when needed - fetches latest Apple docs
 
 ### Always-Available Platforms (Direct Access)
 - **React**: Access directly at https://react.dev (no sync needed)
@@ -57,7 +55,6 @@ Current MCP servers active:
 - ⚠️ Stripe (via @stripe/mcp) - Configured, minor CLI compatibility issue
 - ✅ Vercel (mcp.vercel.com) - OAuth on first use
 - 📋 React - Direct access at https://react.dev (no automation needed)
-- 📋 Tahoe (on-demand, apple-docs-mcp) - Available when needed
 
 ## Maintenance
 
@@ -65,4 +62,4 @@ Current MCP servers active:
 - **No automated syncing**: No GitHub Actions or cron jobs - zero risk to production
 - **Manual updates**: Review platform docs for major version changes as needed
 
-Last updated: 2025-10-28
+Last updated: 2025-10-28 (Tahoe docs removed - not business-related)

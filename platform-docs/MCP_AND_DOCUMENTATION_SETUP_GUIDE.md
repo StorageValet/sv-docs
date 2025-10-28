@@ -44,11 +44,6 @@ Storage Valet now has a comprehensive documentation system powered by **Model Co
 - **Example**: "Show me an example of using useReducer with localStorage"
 - **Update Frequency**: No automation - always fetch directly from official source
 
-### 📋 **macOS Tahoe** - On-Demand
-- **Status**: MCP available when needed
-- **How to Use**: Ask macOS Tahoe system questions
-- **Example**: "How do I disable iPhone apps from appearing on macOS Tahoe?"
-- **Note**: Only needs setup if doing native Mac development
 
 ---
 
@@ -135,8 +130,7 @@ Both files contain an `mcpServers` object with server definitions.
 │   ├── supabase/README.md           # Supabase docs index (MCP active)
 │   ├── stripe/README.md             # Stripe docs index (MCP pending)
 │   ├── vercel/README.md             # Vercel docs index (MCP pending)
-│   ├── react/README.md              # React docs index (direct access)
-│   └── tahoe/README.md              # macOS Tahoe docs index (on-demand)
+│   └── react/README.md              # React docs index (direct access)
 ├── runbooks/                         # Existing: Operational guides
 ├── scripts/                          # Existing: Utility scripts
 └── [other Storage Valet docs]
@@ -191,12 +185,6 @@ If MCPs are unavailable (rare), read from local copies in `platform-docs/`.
 - Form handling and validation
 - File upload interfaces
 - Real-time UI updates
-
-### macOS Tahoe ← → Storage Valet
-- Native macOS features (future)
-- System integration points
-- Performance optimization for Mac
-- App extensions and menu bar items
 
 ---
 

@@ -45,11 +45,6 @@ Claude: [Automatically fetches latest docs and answers]
 - "How do I handle forms?"
 - "What's useMemo vs useCallback?"
 
-**Tahoe**
-- "How do I [system preference]?"
-- "What's new in Tahoe?"
-- "How do I [macOS API]?"
-
 ---
 
 ## Repository Location
@@ -81,8 +76,7 @@ ls platform-docs/                        # See all platforms
 | **Supabase** | ✅ Active | Real-time docs |
 | **Stripe** | ⏳ Soon | Real-time docs (awaiting API key) |
 | **Vercel** | ⏳ Soon | Real-time docs (awaiting OAuth) |
-| **React** | ✅ Active | Weekly synced docs |
-| **Tahoe** | 📋 On-Demand | Available when needed |
+| **React** | ✅ Active | Direct access at https://react.dev |
 
 ---
 

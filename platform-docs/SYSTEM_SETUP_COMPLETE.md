@@ -17,16 +17,14 @@ Storage Valet Documentation System
 ├── MCP Servers (Real-time Official Docs)
 │   ├── Supabase ✅ (mcp.supabase.com)
 │   ├── Vercel ✅ (mcp.vercel.com)
-│   ├── Stripe ⚠️ (configured, minor CLI issue)
-│   └── Tahoe 📋 (on-demand)
+│   └── Stripe ⚠️ (configured, minor CLI issue)
 │
 ├── Local Repository (Backup/Reference)
 │   └── ~/code/sv-docs/platform-docs/
 │       ├── supabase/
 │       ├── vercel/
 │       ├── stripe/
-│       ├── react/
-│       └── tahoe/
+│       └── react/
 │
 └── Documentation Guides
     ├── MCP_AND_DOCUMENTATION_SETUP_GUIDE.md
@@ -44,7 +42,6 @@ Storage Valet Documentation System
 | **Vercel** | ✅ Ready | OAuth on first use | Ask Vercel question to authenticate |
 | **Stripe** | ⚠️ Configured | Questions + CLI | Use `vercel projects list` approach |
 | **React** | ✅ Direct Access | https://react.dev (no sync needed) | Access directly or ask Claude |
-| **Tahoe** | 📋 Optional | On-demand MCP | Deploy when building native Mac features |
 
 ---
 
@@ -114,7 +111,7 @@ Claude: [Searches Stripe docs and provides answer]
 - Project configuration
 - Analytics
 
-### React (✅ Syncing)
+### React (✅ Direct Access)
 - Component patterns
 - Hooks documentation
 - State management
@@ -127,12 +124,6 @@ Claude: [Searches Stripe docs and provides answer]
 - Webhook events
 - Error handling
 - Testing sandbox
-
-### Tahoe (📋 Optional)
-- System preferences
-- macOS APIs
-- App extensions
-- Performance optimization
 
 ---
 
@@ -215,9 +206,8 @@ Send them this message:
 > You now have access to real-time official documentation for:
 > - Supabase (always current)
 > - Vercel (OAuth on first use)
-> - React (synced weekly)
+> - React (direct access at https://react.dev)
 > - Stripe (comprehensive access)
-> - macOS Tahoe (on-demand)
 >
 > Read `MCP_AND_DOCUMENTATION_SETUP_GUIDE.md` for full details, then start asking questions about any platform!
 
@@ -231,9 +221,9 @@ Your Storage Valet documentation system is now:
 - ✅ **Accessible** - Simple natural language interface
 - ✅ **Redundant** - Local backups if MCPs unavailable
 - ✅ **Documented** - Complete guides for your team
-- ✅ **Automated** - Updates happen on schedule
+- ✅ **Real-time** - MCP servers fetch latest docs on demand
 
-You're ready to ask any question about Supabase, Vercel, React, Stripe, or Tahoe, and Claude will provide the latest official documentation!
+You're ready to ask any question about Supabase, Vercel, React, or Stripe, and Claude will provide the latest official documentation!
 
 ---
 
