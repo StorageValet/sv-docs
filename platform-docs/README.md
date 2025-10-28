@@ -53,10 +53,11 @@ All team members using Claude Code should have access to:
 MCP servers are configured in `~/.claude/settings.local.json` or `~/.claude/claude_desktop_config.json` (for Claude Desktop).
 
 Current MCP servers active:
-- ✅ Supabase (mcp.supabase.com)
-- ✅ Stripe (via @stripe/mcp)
-- ✅ Vercel (mcp.vercel.com)
-- 📋 Tahoe (on-demand, apple-docs-mcp)
+- ✅ Supabase (mcp.supabase.com) - Real-time docs
+- ⚠️ Stripe (via @stripe/mcp) - Configured, minor CLI compatibility issue
+- ✅ Vercel (mcp.vercel.com) - OAuth on first use
+- ✅ React - Weekly GitHub Actions sync
+- 📋 Tahoe (on-demand, apple-docs-mcp) - Available when needed
 
 ## Maintenance
 

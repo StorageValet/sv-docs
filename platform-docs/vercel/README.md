@@ -1,6 +1,6 @@
 # Vercel Documentation
 
-**Status**: ⏳ Pending - Awaiting OAuth Configuration
+**Status**: ✅ MCP Configured - OAuth on First Use
 
 ## Quick Access
 
@@ -57,9 +57,22 @@ Automatically synced copies stored in this directory for reference.
 ## Configuration Status
 
 - CLI Tool: ✅ Installed (`vercel --version`)
-- OAuth Connection: ⏳ Pending setup
-- MCP Server: ⏳ Pending OAuth configuration
-- Project Access: Ready when OAuth configured
+- MCP Server: ✅ Configured (https://mcp.vercel.com)
+- OAuth Connection: ⏳ Will prompt on first use
+- Project Access: Ready - OAuth happens automatically
+
+## Your Vercel Projects
+
+### sv-portal (Production)
+- **URL**: https://portal.mystoragevalet.com
+- **Status**: ✅ Deployed and active
+- **Last Updated**: 4 days ago
+- **Node Version**: 22.x
+
+### zacharybrown (Staging/Personal)
+- **Status**: 📋 Created, not in production
+- **Last Updated**: 6 days ago
+- **Node Version**: 22.x
 
 ## Useful Links
 
@@ -70,15 +83,21 @@ Automatically synced copies stored in this directory for reference.
 - [Database Guide](https://vercel.com/docs/storage)
 - [CLI Reference](https://vercel.com/docs/cli)
 
-## Setup Instructions
+## How to Authenticate
 
-1. Open Vercel Dashboard
-2. Authenticate with your Vercel account
-3. Configure MCP OAuth connection
-4. Grant necessary permissions
-5. Verify connection with `claude mcp list`
+OAuth authentication happens **automatically** on first use:
+
+1. Ask Claude Code a Vercel question, like:
+   - "What's the status of my sv-portal project?"
+   - "Show me recent deployments"
+2. Claude will prompt with an OAuth link
+3. Authenticate with your Vercel account
+4. Grant Claude Code access
+5. Done! MCP is now fully authenticated
+
+Verify with: `claude mcp list`
 
 ---
 
 Last updated: 2025-10-28
-Status: Awaiting OAuth Configuration
+Status: ✅ Ready - MCP Configured & Projects Listed
