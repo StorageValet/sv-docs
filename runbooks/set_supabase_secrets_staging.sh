@@ -17,19 +17,23 @@ supabase secrets set SUPABASE_URL="https://gmjucacmbrumncfnnhua.supabase.co"
 echo "✓ SUPABASE_URL set"
 
 # Supabase Service Role Key (NEVER expose client-side)
-supabase secrets set SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtanVjYWNtYnJ1bW5jZm5uaHVhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODA1OTMwOCwiZXhwIjoyMDczNjM1MzA4fQ.Xp4DGJ6PqThMK1WznYof38OScwivhEDqTEP0H7gLneA"
+# ⚠️ SECURITY: Replace with actual key - NEVER commit real keys to git
+supabase secrets set SUPABASE_SERVICE_ROLE_KEY="REPLACE_ME_SUPABASE_SERVICE_ROLE_KEY"
 echo "✓ SUPABASE_SERVICE_ROLE_KEY set"
 
 # Stripe Secret Key (TEST mode for staging)
-supabase secrets set STRIPE_SECRET_KEY="sk_test_51RK44KCLlNQ5U3EW93B27HYO5QzqAghObRkoMooZmA6ILyjgUH04i2pQzHqk0bbIChwEQWwwMyMVeA51ev6AI7Bd00r6vnWiw3"
+# ⚠️ SECURITY: Replace with actual key - NEVER commit real keys to git
+supabase secrets set STRIPE_SECRET_KEY="REPLACE_ME_STRIPE_SECRET_KEY_TEST"
 echo "✓ STRIPE_SECRET_KEY set"
 
 # Stripe Webhook Secret (TEST mode)
-supabase secrets set STRIPE_WEBHOOK_SECRET="whsec_rqkbxrxFGrUWiVkNiQigNGrdxc2dXErJ"
+# ⚠️ SECURITY: Replace with actual key - NEVER commit real keys to git
+supabase secrets set STRIPE_WEBHOOK_SECRET="REPLACE_ME_STRIPE_WEBHOOK_SECRET_TEST"
 echo "✓ STRIPE_WEBHOOK_SECRET set"
 
 # Stripe Price ID for $299/month (TEST mode)
-supabase secrets set STRIPE_PRICE_PREMIUM299="price_1SH04RCLlNQ5U3EWwQX82kLI"
+# ⚠️ SECURITY: Replace with actual price ID - NEVER commit real IDs to git
+supabase secrets set STRIPE_PRICE_PREMIUM299="REPLACE_ME_STRIPE_PRICE_ID_TEST"
 echo "✓ STRIPE_PRICE_PREMIUM299 set"
 
 # Portal Base URL (Vercel staging URL)

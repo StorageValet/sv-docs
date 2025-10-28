@@ -27,8 +27,9 @@ EOF
 echo "✓ VITE_SUPABASE_URL set"
 
 # Supabase Anon Key (public)
+# ⚠️ SECURITY: Replace with actual key - NEVER commit real keys to git
 vercel env add VITE_SUPABASE_ANON_KEY preview production <<EOF
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtanVjYWNtYnJ1bW5jZm5uaHVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNTkzMDgsImV4cCI6MjA3MzYzNTMwOH0.sR4S7DNrwxhi1C4HFnDzr0YL6IBqxzVwCGYtBDhSAFI
+REPLACE_ME_SUPABASE_ANON_KEY
 EOF
 echo "✓ VITE_SUPABASE_ANON_KEY set"
 
@@ -39,8 +40,9 @@ EOF
 echo "✓ VITE_APP_URL set"
 
 # Stripe Publishable Key (TEST mode - public)
+# ⚠️ SECURITY: Replace with actual key - NEVER commit real keys to git
 vercel env add VITE_STRIPE_PUBLISHABLE_KEY preview production <<EOF
-pk_test_51RK44KCLlNQ5U3EWvf4X8fCUYHpkIK6ptjQpZ02OkaLQuyH2UUpJz1dWIJk5teuhyM4FwW19DMflTTfkFKDw9Hqp00mXqa5Zn9
+REPLACE_ME_STRIPE_PUBLISHABLE_KEY_TEST
 EOF
 echo "✓ VITE_STRIPE_PUBLISHABLE_KEY set"
 
