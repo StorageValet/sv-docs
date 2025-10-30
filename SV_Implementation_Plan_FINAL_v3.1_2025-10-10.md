@@ -18,7 +18,7 @@ Clean, current, and contradiction‑free version of the implementation plan read
 - **Billing:** Stripe Checkout + Customer Portal; webhooks in Supabase Edge Functions.
 - **Admin/Internal:** Retool for QR printing & ops dashboard (fallback staff page in portal only if Retool validation fails).
 
-> **Note on Code Metrics (Phase-1 Update)**: Original v3.1 constraints (≤12 files, ≤6 deps, <500 LOC) were **helpful guardrails during initial development** but proved too restrictive for essential customer features. As of Oct 2025, these are **guidelines for code quality**, not hard limits. Architecture remains disciplined: 4 routes, RLS-first security, Stripe Hosted only, systematic organization. See `PHASE_1_STRATEGIC_SHIFT.md` for full context.
+> **Note on Code Metrics (Phase-1 Update)**: Early draft caps on file count, dependencies, or lines of code have been retired. We keep the architecture disciplined—four core routes, RLS-first security, Stripe Hosted flows—but prioritize delivering complete customer experiences over numeric thresholds. See `PHASE_1_STRATEGIC_SHIFT.md` for the rationale.
 
 ---
 
