@@ -35,6 +35,7 @@ This format mirrors the 90-case validation checklist and keeps the history audit
 - **Expected:** Primary navigation (Dashboard, Schedule, Account, Logout) visible so users can return to other areas of the app.
 - **Actual:** Page renders profile and billing sections only; no nav bar or back link. If the page is opened directly, the user must rely on the browser back button or manually edit the URL.
 - **Notes:** Dashboard implements a top navigation bar; Account page likely needs an `AppLayout` or shared header component.
+- **Status:** ✅ Resolved Oct 31, 2025 — Introduced shared `AppLayout` navigation wrapper and applied to Dashboard, Schedule, Account pages.
 
 ### Item Photo Upload Accepted but Not Displayed
 - **Environment:** Production portal – Comet 1.2 (Chromium), macOS 14.7
@@ -62,4 +63,3 @@ This format mirrors the 90-case validation checklist and keeps the history audit
 1. Assign each issue to the appropriate sprint or bug-fix ticket.
 2. Add regression tests to the Phase‑1 validation checklist once fixes ship.
 3. Retest after fixes and append results (e.g., `✅ Resolved in commit …`).
-
