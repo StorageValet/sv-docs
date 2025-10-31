@@ -1,0 +1,57 @@
+STORAGE VALET DOCUMENTATION ARCHIVE - OCT 28, 2025
+===================================================
+
+ARCHIVED: 18 files
+REASON: Documentation cleanup - reduce bloat, prevent agents from referencing outdated info
+
+FILES ARCHIVED:
+---------------
+
+ROOT LEVEL (11 files):
+1. SESSION_SUMMARY_2025-10-24-PRODUCTION-VERIFICATION.md - Historical session summary
+2. DOCUMENTATION_STATUS_AND_ACTION_ITEMS_2025-10-24.md - Historical action items
+3. DOCUMENTATION_AUDIT_2025-10-18.md - Completed audit
+4. Business_Context_and_Requirements_v3.1.md - Superseded by runbooks version (Oct 21)
+5. DECISION_REQUIRED_2025-10-24-BILLING_FLOW_ARCHITECTURE_CRITICAL.md - Decision resolved
+6. LINE_IN_THE_SAND_Go-NoGo_v3.1.md - Superseded by Phase 1 version
+7. FINAL_VALIDATION_CHECKLIST_v3.1.md - Superseded by Phase 1 version
+8. Deployment_Instructions_v3.1.md - Old deployment guide
+9. PERPLEXITY_END_TO_END_IMPLEMENTATION_GUIDE.md - One-time setup complete
+10. WEBFLOW_INTEGRATION_GUIDE_FOR_PERPLEXITY.md - One-time setup complete
+11. Claude Code Sub-Agents.md - Outdated agent setup doc
+
+RUNBOOKS (7 files):
+12. DEPLOYMENT_STATUS_2025-10-20.md - Superseded by Oct 24 version
+13. VERCEL_SETUP_COMPLETE_2025-10-13.md - Setup complete, historical
+14. SPRINT_0_COMPLETION_SUMMARY.md - Phase 0 complete
+15. PHASE_0.6_GATES_v3.1.md - Phase 0 gates (now in Phase 1)
+16. PHASE_0.6.1_ITEM_CREATION_STATUS.md - Phase 0.6.1 status (now in Phase 1)
+17. DEPLOYMENT_GUIDE_v3.1.md - Superseded by PRODUCTION_DEPLOYMENT_CHECKLIST
+18. storage_valet_master_checklist_phase_0.md - Phase 0 checklist (now in Phase 1)
+
+KEPT (NOT ARCHIVED):
+--------------------
+✅ SV_Implementation_Plan_FINAL_v3.1_2025-10-10.md - FOUNDATIONAL ARCHITECTURE
+   (Explicitly kept per user requirement - defines v3.1 constraints and scope)
+
+ACTIVE DOCS REMAINING: 26 files
+- 6 root-level docs (including Implementation Plan)
+- 12 runbooks  
+- 8 platform-docs
+
+ARCHIVE LOCATION: ~/code/sv-docs-archive-oct28-2025/
+RESTORE: Simply copy files back to ~/code/sv-docs/ if needed
+
+CLEANUP RESULTS:
+- 40% reduction in active documentation
+- Removed outdated pricing references
+- Removed Phase 0 historical docs
+- Removed resolved decision docs
+- Kept all Phase 1 current docs
+- Kept foundational architecture plan
+
+NEXT STEPS FOR AGENTS:
+- Read ACTIVE_DOCUMENTATION_INDEX.md for current doc list
+- DO NOT reference archived docs during development
+- Use archived docs only for historical context if explicitly needed
+- Always check Implementation Plan for architectural constraints
